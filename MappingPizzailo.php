@@ -1,18 +1,18 @@
 <?php
 
-namespace App\Entity;
+namespace src\Entity;
 use Doctrine\ORM\Mapping as ORM;
 use Doctrine\Common\Collections\ArrayCollections;
 
 /**
  * Class Pizzeria
- * @package App\Entity
+ * @package src\Entity
  * Cet objet va définir une pizzeria
  */
 class Pizzeria {
     /**
      * une pizzeria a pottentiellment plusieurs pizzaiolo
-     * @ORM\OneToMany(targetEntity="App\Entity\Pizzaiolo", mappdBy="pizzeria")
+     * @ORM\OneToMany(targetEntity="src\Entity\Pizzaiolo", mappdBy="pizzeria")
      */
 
     private $pizzaiolo;
@@ -29,7 +29,7 @@ class Pizzeria {
 class Pizzaiolo {
     /**
      * Un pizzaiolo va être lié à une pizzeria
-     * @ORM\ManyToOne(targetEntity="App\Entity\Pizzeria", inversedBy="pizzaiolo"
+     * @ORM\ManyToOne(targetEntity="src\Entity\Pizzeria", inversedBy="pizzaiolo"
      * @ORM\JoinColumn(name="pizzeria_id", referencedColumnName="id")
      */
 
